@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const CommentForm = () => {
+const CommentForm = ({addComment}) => {
 
     const [author, setAuthor] = useState('');
     const [text, setText]     = useState('');
@@ -16,6 +16,8 @@ const CommentForm = () => {
     const handleFormSubmit = (ev) => {
         ev.preventDefault();
         const comment = {author, text};
+        comment.id = Date.now();
+        addComment(comment);
     }
 
 

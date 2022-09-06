@@ -8,7 +8,7 @@ const CommentList = ({comments}) => {
     const commentComponents = comments.map(comment => {
         return (
             <Comment author={comment.author}>
-            {comment.text}
+            <q>{comment.text}</q>
             </Comment>
         )
     })

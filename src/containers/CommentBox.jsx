@@ -24,15 +24,16 @@ const CommentBox = () => {
         ]
     )
 
-    const addComment = () => {
+    const addComment = (submittedComment) => {
         //addComment()
-        ev.preventDefault();
-        console.log('addComment called')
+        submittedComment.id = Date.now();
+        const updatedComments = [...comments, submittedComment];
+        setComments(updatedComments);
     }
 
     return (
         <>
-            <h2><CommentForm onCommentSubmit={addComment}/></h2>
+            <h2><CommentForm addComment={addComment}/></h2>
             <CommentList comments={comments}/>
         </>
 )
