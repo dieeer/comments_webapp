@@ -1,4 +1,5 @@
-import CommentList from "../components/commentList"
+import CommentList from "../components/commentList";
+import CommentForm from "../components/CommentForm";
 import {useState} from "react";
 
 const CommentBox = () => {
@@ -23,9 +24,15 @@ const CommentBox = () => {
         ]
     )
 
+    const addComment = () => {
+        //addComment()
+        ev.preventDefault();
+        console.log('addComment called')
+    }
+
     return (
         <>
-            <h2>i'm the comment box</h2>
+            <h2><CommentForm onCommentSubmit={addComment}/></h2>
             <CommentList comments={comments}/>
         </>
 )

@@ -8,7 +8,6 @@ function App() {
     <>
     <h1>comments</h1>
     <CommentBox/>
-    <CommentForm/>
     </>  );
 }
 
